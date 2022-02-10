@@ -1,6 +1,7 @@
 # Hey everyone,I'm Foufou-exe 👋
-![Logo](https://raw.githubusercontent.com/Foufou-exe/Foufou-exe/main/asset/image/Content.gif)
-
+<div align="center">
+ <image src="https://raw.githubusercontent.com/Foufou-exe/Foufou-exe/main/asset/image/Content.gif" width=800px height=500px>
+</div>
 
 ## 👀 About Me
 
@@ -12,11 +13,7 @@ But I like to do development and learn new programming languages like Front-end 
 
 🔰 OS
 
-![](https://img.shields.io/static/v1?label=%20&message=Linux&color=000000&style=for-the-badge&logoColor=FDFEFE&logo=linux)
-
-![](https://img.shields.io/static/v1?label=%20&message=Windows&color=1354EA&style=for-the-badge&logoColor=FDFEFE&logo=microsoft)
-
-![](https://img.shields.io/static/v1?label=%20&message=Mac%20OS&color=black&style=for-the-badge&logoColor=FDFEFE&logo=apple)
+![](https://img.shields.io/static/v1?label=%20&message=Linux&color=000000&style=for-the-badge&logoColor=FDFEFE&logo=linux)   ![](https://img.shields.io/static/v1?label=%20&message=Windows&color=1354EA&style=for-the-badge&logoColor=FDFEFE&logo=microsoft)   ![](https://img.shields.io/static/v1?label=%20&message=Mac%20OS&color=black&style=for-the-badge&logoColor=FDFEFE&logo=apple)
 
 🔰 Tools
 
