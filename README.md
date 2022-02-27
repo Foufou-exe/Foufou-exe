@@ -1,6 +1,6 @@
 # Hey everyone,I'm Foufou-exe 👋
 <div align="center">
- <image src="https://raw.githubusercontent.com/Foufou-exe/Foufou-exe/main/asset/image/Content.gif" width=800px height=500px>
+ <image src="https://github.com/Foufou-exe/Foufou-exe/blob/main/asset/image/Bannneir.gif?raw=true">
 </div>
 
 ## 👀 About Me
