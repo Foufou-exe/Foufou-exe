@@ -1,17 +1,31 @@
-# Hey everyone,I'm Foufou-exe 👋
 <div align="center">
- <image src="https://github.com/Foufou-exe/Foufou-exe/blob/main/asset/image/Bannneir.gif?raw=true">
+ <h1>Hey everyone,I'm Foufou-exe 👋</h1>
+ <image src="https://github.com/Foufou-exe/Foufou-exe/blob/main/asset/image/Bannneir.gif?raw=true" width=75%>
+  </br>
+ <img src="https://komarev.com/ghpvc/?username=foufou-exe&label=Profile%20views&color=73ff00&style=for-the-badge" alt="foufou-exe" />
 </div>
+</br>
 
+<div align="center">
+ 
 ## 👀 About Me
 
-I'm a young student working in Networking / Cyber Security in France. I am passionate about computers and the internet in general, my interest is to help people with the tools that are offered to us but also to put forward the evolution.
-But I like to do development and learn new programming languages like Front-end and Back-end, as I am a SysOps, I need to have the knowledge in both areas. 
+</div>
+
+<img align="left" src="https://github.com/Foufou-exe/Foufou-exe/blob/main/asset/image/photo_profil-modified.png?raw=true" alt=photo_profil width=25% />
+<h3>./Foufoudu34</h3>
+</br>
+<p>I'm a young student working in Networking / Cyber Security in France. I am passionate about computers and the internet in general, my interest is to help people with the tools that are offered to us but also to put forward the evolution. But I like to do development and learn new programming languages like Front-end and Back-end, as I am a SysOps, I need to have the knowledge in both areas.</p>
 
 
-## 😎 KNOWLEDGE
+<div align="center">
+</br>
+</br>
 
-🔰 OS
+## 🦎 Knowledge
+ 
+ <h4>🔰 OS </h4>
+ <h4>
 
 ![](https://img.shields.io/static/v1?label=%20&message=Linux&color=000000&style=for-the-badge&logoColor=FDFEFE&logo=linux)   ![](https://img.shields.io/static/v1?label=%20&message=Windows&color=1354EA&style=for-the-badge&logoColor=FDFEFE&logo=microsoft)   ![](https://img.shields.io/static/v1?label=%20&message=Mac%20OS&color=black&style=for-the-badge&logoColor=FDFEFE&logo=apple)
 
@@ -74,25 +88,88 @@ But I like to do development and learn new programming languages like Front-end 
 
 ![visualstudiocode](https://img.shields.io/static/v1?label=%20&message=Visual%20Studio%20Code&color=1851DF&style=for-the-badge&logoColor=FDFEFE&logo=visualstudio)
 ![visualstudiocode](https://img.shields.io/static/v1?label=%20&message=Visual%20Studio&color=8519D6&style=for-the-badge&logoColor=FDFEFE&logo=visualstudio)
-## ⚜️ My social Network
+ </h4>
+</div>
+</br>
+</div>
+
+<div align="center">
+
+ ## 🌍 My social Network
+
+</br>
+
 [![portfolio](https://img.shields.io/static/v1?label=%20&message=My%20PortFolio&color=black&style=for-the-badge&logoColor=FDFEFE&logo=azuredevops)](http://ent.btssio.net/thibaut.maurras) 
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/thibaut-maurras/) 
 [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/MaurrasT)
 [![reddit](https://img.shields.io/static/v1?label=%20&message=Reddit&color=FF4500&style=for-the-badge&logoColor=FDFEFE&logo=reddit)](https://www.reddit.com/user/Foufou-exe)
 
+</br>
+
+</div>
+
+<div align="center">
+ 
 ## 👌Project finished
 
 This is where you will find the finished projects. 😁
 
-- [Biographie](https://github.com/Foufou-exe/Foufou-exe)
 
 
+<a href="https://github.com/anuraghazra/github-readme-stats">
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=foufou-exe&repo=linux-automation" />
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=foufou-exe&repo=Networking-Interface-Configuration"/>
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=foufou-exe&repo=Lizard-Centos"/>
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=foufou-exe&repo=LizardFS-Debian"/>
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=foufou-exe&repo=LizardFS-Ubuntu"/>
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=foufou-exe&repo=zabbix-install"/>
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=foufou-exe&repo=zabbix-centos8-install"/>
+</a>
+
+</div>
+
+</br>
+
+<div align="center">
+ 
 ## 💻 Project in progress
 
 This is where you will find the Project in progress .
 
-- Project School : Repo Private
+- [ ] Project School : Repo Private
+- [ ] Web Site : Repo Private
+ 
+</br>
+
+</div>
+
+<div align="center">
+ 
+## 🏆 Trophées
+
+<a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=foufou-exe&theme=dracula" alt="foufou-exe" /></a>
+
+</br>
+
+</div>
+
+<div align="center">
+ 
+## 📊 Static
+
+</br>
+
+<p><img align="center" src="https://github-readme-stats.vercel.app/api?username=foufou-exe&show_icons=true&theme=dark&locale=en" alt="foufou-exe" />
+<img align="center" src="https://github-readme-streak-stats.herokuapp.com?user=foufou-exe&theme=github-dark&hide_border=true&date_format=j%20M%5B%20Y%5D&fire=DD2727&dates=FF9500" alt="foufou-exe" /></p>
+
+</div>
+
 ## 
 
+</br>
+<div align="center">
+ 
 ![github_watch](https://img.shields.io/github/watchers/Foufou-exe/Foufou-exe?style=social)
 ![github_follow](https://img.shields.io/github/followers/Foufou-exe?style=social)
+
+</div>
