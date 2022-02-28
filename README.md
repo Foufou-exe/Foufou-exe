@@ -11,7 +11,7 @@
 ## 👀 About Me
 
 </div>
-
+</br>
 <img align="left" src="https://github.com/Foufou-exe/Foufou-exe/blob/main/asset/image/photo_profil-modified.png?raw=true" alt=photo_profil width=25% />
 <h3>./Foufoudu34</h3>
 </br>
@@ -145,7 +145,7 @@ This is where you will find the Project in progress .
 
 <div align="center">
  
-## 🏆 Trophées
+## 🏆 Trophy
 
 <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=foufou-exe&theme=dracula" alt="foufou-exe" /></a>
 
@@ -155,7 +155,7 @@ This is where you will find the Project in progress .
 
 <div align="center">
  
-## 📊 Static
+## 📊 Statistics
 
 </br>
 
