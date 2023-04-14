@@ -1,12 +1,10 @@
 <div align="center">
 
-![Logo](images/image.png)
-
-
- 
+![Logo](images/image.png) 
 ![GitHub followers](https://img.shields.io/github/followers/Foufou-exe?color=blue&logo=github) ![GitHub watchers](https://img.shields.io/github/watchers/Foufou-exe/Foufou-exe?color=blue&logo=github) ![Profil Views](https://komarev.com/ghpvc/?username=Foufou-exe&style=social)
 
-### Description
+## 🌵Description
+ 
 </div>
 
 My name is Thibaut and I'm a computer science professional with several years of experience in this field. I'm currently finishing my bachelor's degree and soon my master's degree. I'm passionate about developing scripts and applications for systems, networks and databases.
