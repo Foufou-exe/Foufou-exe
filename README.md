@@ -19,7 +19,7 @@ __My readme reflects my skills, experience and commitment to software developmen
  
  ## 🎧Listen
  
-[![Spotify](https://spotify-now-playing-readme.vercel.app/api/spotify)](https://open.spotify.com/user/foufoudu34)
+[![spotify-github-profile](https://spotify-github-profile.vercel.app/api/view?uid=foufoudu34&cover_image=true&theme=natemoo-re&show_offline=true&background_color=121212&interchange=true&bar_color=53b14f&bar_color_cover=true)](https://spotify-github-profile.vercel.app/api/view?uid=foufoudu34&redirect=true)
  
 </div>
 
