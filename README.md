@@ -18,18 +18,9 @@ __My readme reflects my skills, experience and commitment to software developmen
 &nbsp;<div align="center">
  
  ## 🎧Listen
-
-<iframe 
-  title="Spotify Embed: Recommendation Playlist"
-  src="https://open.spotify.com/embed/playlist/2gB0vVIW9rIPbXMq3KUjrM?utm_source=generator&theme=0"
-  width="100%"
-  height="100%"
-  style="min-height: 360px;"
-  frameborder="0"
-  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-  loading="lazy"
-></iframe>
-
+ 
+[![Spotify](https://spotify-now-playing-readme.vercel.app/api/spotify)](https://open.spotify.com/user/foufoudu34)
+ 
 </div>
 
  <div align="center">
