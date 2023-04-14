@@ -15,12 +15,20 @@ __My readme reflects my skills, experience and commitment to software developmen
 
 
 
+&nbsp;<div align="center">
+ 
+ ## 🎧Listen
+ 
+  [![Spotify](https://novatorem.vercel.app/api/spotify?background_color=0d1117&border_color=ffffff)](https://open.spotify.com/user/foufoudu34)
+</div>
 
  <div align="center">
  
- ## 📊 Statistics
+ ## 📊 Contribution
 
  </br>
+
+   <img src="https://raw.githubusercontent.com/Foufou-exe/octocat/main/profile-3d-contrib/profile-night-rainbow.svg" alt="foufou-exe" />
   <p>
    <img src="https://github-readme-stats.vercel.app/api?username=foufou-exe&show_icons=true&theme=dark&locale=en" alt="foufou-exe" />
    <img src="https://github-readme-streak-stats.herokuapp.com?user=foufou-exe&theme=github-dark&hide_border=true&date_format=j%20M%5B%20Y%5D&fire=DD2727&dates=FF9500" alt="foufou-exe" />
