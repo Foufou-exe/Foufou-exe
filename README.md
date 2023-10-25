@@ -1,7 +1,8 @@
 <div align="center">
 
 ![Logo](images/image.png) 
-![GitHub followers](https://img.shields.io/github/followers/Foufou-exe?color=blue&logo=github) [![wakatime](https://wakatime.com/badge/user/28891aed-b705-45fc-a811-e5055f2de6ba.svg)](https://wakatime.com/@28891aed-b705-45fc-a811-e5055f2de6ba)
+
+![GitHub followers](https://img.shields.io/github/followers/Foufou-exe?color=blue&logo=github)[![wakatime](https://wakatime.com/badge/user/28891aed-b705-45fc-a811-e5055f2de6ba.svg)](https://wakatime.com/@28891aed-b705-45fc-a811-e5055f2de6ba)
 
 ## 🌵Description
  
