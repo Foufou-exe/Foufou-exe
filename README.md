@@ -1,6 +1,7 @@
 <div align="center">
 
-![Logo](images/image.png) 
+
+![image](https://github.com/Foufou-exe/Foufou-exe/assets/76502393/89d85719-f489-46c4-8447-87540b0a0a6e)
 
 ![GitHub followers](https://img.shields.io/github/followers/Foufou-exe?color=blue&logo=github)[![wakatime](https://wakatime.com/badge/user/28891aed-b705-45fc-a811-e5055f2de6ba.svg)](https://wakatime.com/@28891aed-b705-45fc-a811-e5055f2de6ba)
 
