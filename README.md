@@ -31,11 +31,6 @@ __My readme reflects my skills, experience and commitment to software developmen
  </br>
 
    <img src="https://github.com/Foufou-exe/octocat/blob/main/profile-3d-contrib/profile-night-rainbow.svg" alt="foufou-exe" />
-    </br>
-  <p>
- 
-   <img src="https://github-readme-streak-stats.herokuapp.com?user=foufou-exe&theme=github-dark&hide_border=true&date_format=j%20M%5B%20Y%5D&fire=DD2727&dates=FF9500" alt="foufou-exe" />
-  </p>
 </div>
 </br>
 
