@@ -1,9 +1,12 @@
 <div align="center">
 
 
-![image](https://github.com/Foufou-exe/Foufou-exe/assets/76502393/89d85719-f489-46c4-8447-87540b0a0a6e)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Sans&weight=900&size=70&pause=1000&color=0BF710&center=true&vCenter=true&random=false&width=900&height=200&lines=Welcome+to+my+Profile+!+%E2%9C%A8)](https://git.io/typing-svg)
 
 ![GitHub followers](https://img.shields.io/github/followers/Foufou-exe?color=blue&logo=github)[![wakatime](https://wakatime.com/badge/user/28891aed-b705-45fc-a811-e5055f2de6ba.svg)](https://wakatime.com/@28891aed-b705-45fc-a811-e5055f2de6ba)
+   <a href="https://github.com/Foufou-exe/Foufou-exe/stargazers"><img src="https://img.shields.io/github/stars/Foufou-exe/Foufou-exe.svg?logo=github"></a>
+   <a href="https://github.com/Foufou-exe/Foufou-exe/network/members"><img src="https://img.shields.io/github/forks/Foufou-exe/Foufou-exe?color=blue&logo=github"></a>
+   <img src="https://visitor-badge.laobi.icu/badge?page_id=Foufou-exe.Foufou-exe" alt="visitors"/>   
 
 ## 🌵Description
  
