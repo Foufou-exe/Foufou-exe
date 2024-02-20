@@ -43,9 +43,7 @@ __My readme reflects my skills, experience and commitment to software developmen
 ## 📖 DevCard
  </br>
  
- <a href="https://app.daily.dev/Foufou-exe">
-  <img src="https://api.daily.dev/devcards/f05953c9aa48480eb787edf61f7dcbc4.png?r=ww1" width="300" alt="./Foufou-exe's Dev Card"/>
- </a>
+<a href="https://app.daily.dev/foufouexe"><img src="https://api.daily.dev/devcards/v2/ntpE4jr6lznfJRFbQIjsV.png?r=99n&type=default" width="356" alt="./Foufou-exe's Dev Card"/></a>
  </br>
  
 </div>
