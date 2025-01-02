@@ -22,9 +22,6 @@ __My readme reflects my skills, experience and commitment to software developmen
 
 &nbsp;<div align="center">
  
- ## 🎧Listen
- 
-[![spotify-github-profile](https://spotify-github-profile.vercel.app/api/view?uid=foufoudu34&cover_image=true&theme=default&show_offline=true&background_color=121212&interchange=true)](https://spotify-github-profile.vercel.app/api/view?uid=foufoudu34&redirect=true)
  
 </div>
 
