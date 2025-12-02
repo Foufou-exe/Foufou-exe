@@ -2,8 +2,7 @@
    <img src="https://media.licdn.com/dms/image/v2/D4E16AQG-6Db4x08zDg/profile-displaybackgroundimage-shrink_350_1400/B4EZcSGRDRHIAY-/0/1748355323134?e=1766016000&v=beta&t=iWjFPxg1dmuCwbSDy34LQLWj5FE2oYD4JxkUQq272-w" alt="Bannière"/>
 </div>
 
-
-### 👨‍💼 À propos de moi
+---
 
 <div align="center">
   <a href="https://git.io/typing-svg">
@@ -18,6 +17,8 @@
   </p>
 
 </div>
+
+### 👨‍💼 À propos de moi
 
 > *"Autonome, Curieux et Impliqué."*
 
@@ -38,7 +39,7 @@ Mon expertise couvre l'ensemble de la chaîne de valeur infra : de la **virtuali
     <a href="mailto:thibaut.maurras34@gmail.com">
       <img src="https://img.shields.io/badge/Email-Contact_Me-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail">
     </a>
-    <a href="https://thibautm.fr/">
+    <a href="https://thibautm.com/">
       <img src="https://img.shields.io/badge/Website-Portfolio-success?style=for-the-badge&logo=firefox-browser&logoColor=white" alt="Website">
     </a>
 
@@ -123,3 +124,4 @@ Mon expertise couvre l'ensemble de la chaîne de valeur infra : de la **virtuali
   </p>
   <sub><i>Thibaut Maurras © 2025 - Montpellier, France 🇫🇷</i></sub>
 </div>
+
