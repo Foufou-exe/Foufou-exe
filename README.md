@@ -20,6 +20,8 @@
 
 ### 👨‍💼 About Me
 
+<img align="right" src="hacking.gif" size="500"/>
+
 > *"Self-driven, Curious, and Committed."*
 
 I am **Thibaut Maurras**, a Systems Engineer based in **Montpellier**. With international experience (a gap year in Canada) that strengthened my adaptability and English skills, I am currently working at **Nexpublica**.
@@ -124,3 +126,4 @@ My expertise covers the entire infrastructure value chain: from **virtualization
   </p>
   <sub><i>Thibaut Maurras © 2025 - Montpellier, France 🇫🇷</i></sub>
 </div>
+
