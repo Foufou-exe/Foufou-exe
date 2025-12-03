@@ -20,7 +20,7 @@
 
 ### 👨‍💼 About Me
 
-<img align="right" src="hacking.gif" size="500"/>
+<img align="right" src="hacking.gif" size="400"/>
 
 > *"Self-driven, Curious, and Committed."*
 
@@ -126,4 +126,5 @@ My expertise covers the entire infrastructure value chain: from **virtualization
   </p>
   <sub><i>Thibaut Maurras © 2025 - Montpellier, France 🇫🇷</i></sub>
 </div>
+
 
