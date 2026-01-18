@@ -1,7 +1,6 @@
 <div align="center">
-   <img src="https://media.licdn.com/dms/image/v2/D4E16AQG-6Db4x08zDg/profile-displaybackgroundimage-shrink_350_1400/B4EZcSGRDRHIAY-/0/1748355323134?e=1766016000&v=beta&t=iWjFPxg1dmuCwbSDy34LQLWj5FE2oYD4JxkUQq272-w" alt="Banner"/>
+   <img src="https://media.licdn.com/dms/image/v2/D4E16AQG-6Db4x08zDg/profile-displaybackgroundimage-shrink_350_1400/B4EZcSGRDRHIAY-/0/1748355323134?e=1770249600&v=beta&t=VAX80MuS-Q3q1vSdyMNmUIOYiwipodYQU6taMRFc38M" alt=banner" />
 </div>
-
 ---
 
 <div align="center">
@@ -110,11 +109,6 @@ My expertise covers the entire infrastructure value chain: from **virtualization
 
 <img src="https://github.com/Foufou-exe/octocat/blob/main/profile-3d-contrib/profile-night-rainbow.svg" alt="Contribution Graph 3D" />
 
-#### Trophies
-
-<a href="https://github.com/ryo-ma/github-profile-trophy">
-  <img src="https://github-profile-trophy.vercel.app/?username=Foufou-exe&theme=radical&no-frame=true&margin-w=15&row=1&column=7" alt="Foufou-exe Trophies" />
-</a>
 
 ---
 
@@ -126,6 +120,7 @@ My expertise covers the entire infrastructure value chain: from **virtualization
   </p>
   <sub><i>Thibaut Maurras © 2025 - Montpellier, France 🇫🇷</i></sub>
 </div>
+
 
 
 
