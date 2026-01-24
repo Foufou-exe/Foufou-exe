@@ -1,7 +1,6 @@
 <div align="center">
    <img src="https://media.licdn.com/dms/image/v2/D4E16AQG-6Db4x08zDg/profile-displaybackgroundimage-shrink_350_1400/B4EZcSGRDRHIAY-/0/1748355323134?e=1770249600&v=beta&t=VAX80MuS-Q3q1vSdyMNmUIOYiwipodYQU6taMRFc38M" alt=banner" />
 </div>
----
 
 <div align="center">
   <a href="https://git.io/typing-svg">
@@ -120,6 +119,7 @@ My expertise covers the entire infrastructure value chain: from **virtualization
   </p>
   <sub><i>Thibaut Maurras © 2025 - Montpellier, France 🇫🇷</i></sub>
 </div>
+
 
 
 
