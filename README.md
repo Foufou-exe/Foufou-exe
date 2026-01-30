@@ -106,15 +106,19 @@ My expertise covers the entire infrastructure value chain: from **virtualization
 
 #### Activity
 
-<img src="https://github.com/Foufou-exe/octocat/blob/main/profile-3d-contrib/profile-night-rainbow.svg" alt="Contribution Graph 3D" />
+<img src="https://raw.githubusercontent.com/Foufou-exe/Foufou-exe/refs/heads/main/profile-3d-contrib/profile-gitblock.svg" alt="Contribution Graph 3D" />
 
+
+#### GitHub Trophy
+
+<img src="https://github-profile-trophy-fork-two.vercel.app/?username=Foufou-exe&theme=darkhub" alt="GitHub Stats" />
 
 ---
 
 <div align="center">
   <p align="center">
     <a href="https://github.com/sponsors/Foufou-exe">
-      <img src="https://img.shields.io/static/v1?label=Sponsor%20Me&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86&style=for-the-badge" alt="Sponsor"/>
+      <img src="https://img.shields.io/static/v1?label=Sponsor%20Me&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86&style=for-the-badge" alt="trophy github"/>
     </a>
   </p>
   <sub><i>Thibaut Maurras © 2025 - Montpellier, France 🇫🇷</i></sub>
