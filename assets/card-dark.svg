@@ -1,62 +1,68 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="834" height="542" viewBox="0 0 834 542" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="14">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="834" height="542" viewBox="0 0 834 542" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="14">
 <style>
 text{white-space:pre}
 .in{opacity:0;animation:in .35s ease-out forwards}
 @keyframes in{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:none}}
-.type{clip-path:inset(0 100% 0 0);animation:type .6s steps(9) .2s forwards}
+.pop{opacity:0;transform-box:fill-box;transform-origin:center;animation:pop .45s cubic-bezier(.3,1.6,.5,1) forwards}
+@keyframes pop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
+.float{transform-box:fill-box;animation:float 3.2s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-4px)}}
+.fill{transform-box:fill-box;transform:scaleX(0);animation:fill 1.2s ease-out forwards}
+@keyframes fill{to{transform:scaleX(1)}}
+.type{clip-path:inset(0 100% 0 0)}
 @keyframes type{to{clip-path:inset(0 0 0 0)}}
-.caret{transform:translateX(-75.9px);animation:caret .6s steps(9) .2s forwards,blink 1s step-end 1s infinite}
 @keyframes caret{to{transform:none}}
 @keyframes blink{50%{opacity:0}}
+@keyframes hide{to{opacity:0}}
 .led{animation:led 2.2s step-end infinite}
 @keyframes led{0%,100%{opacity:1}40%{opacity:.25}55%{opacity:1}70%{opacity:.4}}
-.l0{animation-delay:0.00s}.l1{animation-delay:0.37s}.l2{animation-delay:0.74s}.l3{animation-delay:1.11s}.l4{animation-delay:1.48s}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;opacity:1!important;clip-path:none!important;transform:none!important}}
+.pulse{animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;opacity:1!important;clip-path:none!important;transform:none!important}.tmp{display:none}}
 </style>
 <rect x=".5" y=".5" width="833" height="541" rx="10" fill="#0d1117" stroke="#30363d"/>
 <path d="M.5 38 V10.5 A10 10 0 0 1 10.5 .5 H823.5 A10 10 0 0 1 833.5 10.5 V38 Z" fill="#161b22"/>
 <line x1="0" y1="38" x2="834" y2="38" stroke="#30363d"/>
 <circle cx="28" cy="19.0" r="6" fill="#ff5f57"/><circle cx="48" cy="19.0" r="6" fill="#febc2e"/><circle cx="68" cy="19.0" r="6" fill="#28c840"/>
 <text x="417.0" y="23.0" text-anchor="middle" fill="#8b949e" font-size="12">thibaut@nexpublica: ~</text>
-<text x="28" y="86"><tspan fill="#3fb950">~ ❯ </tspan><tspan fill="#e6edf3" class="type">fastfetch</tspan></text>
-<rect class="caret" x="139.59" y="74" width="8.43" height="16" fill="#e6edf3"/>
+<text x="28" y="86"><tspan fill="#3fb950">~ ❯ </tspan><tspan fill="#e6edf3" class="type" style="animation:type 0.58s steps(9) 0.20s forwards">fastfetch</tspan></text><rect x="139.6" y="74" width="8.43" height="16" fill="#e6edf3" style="transform:translateX(-75.9px);animation:caret 0.58s steps(9) 0.20s forwards,blink 1s step-end 0.98s infinite"/>
 <text class="in" style="animation-delay:0.90s" x="28" y="126" fill="#6e7681">┌────────────────────────────┐</text>
-<text class="in" style="animation-delay:0.94s" x="28" y="146" fill="#6e7681">│ [::]  ═════════════  <tspan class="led l0" fill="#3fb950">●</tspan> <tspan class="led l1" fill="#3fb950">●</tspan> <tspan class="led l2" fill="#3fb950">●</tspan> │</text>
+<text class="in" style="animation-delay:0.94s" x="28" y="146" fill="#6e7681">│ [::]  ═════════════  <tspan class="led" style="animation-delay:0.00s" fill="#3fb950">●</tspan> <tspan class="led" style="animation-delay:0.37s" fill="#3fb950">●</tspan> <tspan class="led" style="animation-delay:0.74s" fill="#3fb950">●</tspan> │</text>
 <text class="in" style="animation-delay:0.98s" x="28" y="166" fill="#6e7681">├────────────────────────────┤</text>
-<text class="in" style="animation-delay:1.02s" x="28" y="186" fill="#6e7681">│ [::]  ═════════════  <tspan class="led l3" fill="#3fb950">●</tspan> <tspan class="led l4" fill="#3fb950">●</tspan> <tspan class="led l0" fill="#3fb950">●</tspan> │</text>
+<text class="in" style="animation-delay:1.02s" x="28" y="186" fill="#6e7681">│ [::]  ═════════════  <tspan class="led" style="animation-delay:1.11s" fill="#3fb950">●</tspan> <tspan class="led" style="animation-delay:1.48s" fill="#3fb950">●</tspan> <tspan class="led" style="animation-delay:0.00s" fill="#3fb950">●</tspan> │</text>
 <text class="in" style="animation-delay:1.06s" x="28" y="206" fill="#6e7681">├────────────────────────────┤</text>
-<text class="in" style="animation-delay:1.10s" x="28" y="226" fill="#6e7681">│ [::]  ═════════════  <tspan class="led l1" fill="#3fb950">●</tspan> <tspan class="led l2" fill="#3fb950">●</tspan> <tspan class="led l3" fill="#3fb950">●</tspan> │</text>
+<text class="in" style="animation-delay:1.10s" x="28" y="226" fill="#6e7681">│ [::]  ═════════════  <tspan class="led" style="animation-delay:0.37s" fill="#3fb950">●</tspan> <tspan class="led" style="animation-delay:0.74s" fill="#3fb950">●</tspan> <tspan class="led" style="animation-delay:1.11s" fill="#3fb950">●</tspan> │</text>
 <text class="in" style="animation-delay:1.14s" x="28" y="246" fill="#6e7681">├────────────────────────────┤</text>
 <text class="in" style="animation-delay:1.18s" x="28" y="266" fill="#6e7681">│ ░░░░░░░░░░░░░░░░░░░░░░░░░░ │</text>
 <text class="in" style="animation-delay:1.22s" x="28" y="286" fill="#6e7681">│ ░░░░░░░░░░░░░░░░░░░░░░░░░░ │</text>
 <text class="in" style="animation-delay:1.26s" x="28" y="306" fill="#6e7681">├────────────────────────────┤</text>
-<text class="in" style="animation-delay:1.30s" x="28" y="326" fill="#6e7681">│ [::]  ═════════════  <tspan class="led l4" fill="#3fb950">●</tspan> <tspan class="led l0" fill="#3fb950">●</tspan> <tspan class="led l1" fill="#3fb950">●</tspan> │</text>
+<text class="in" style="animation-delay:1.30s" x="28" y="326" fill="#6e7681">│ [::]  ═════════════  <tspan class="led" style="animation-delay:1.48s" fill="#3fb950">●</tspan> <tspan class="led" style="animation-delay:0.00s" fill="#3fb950">●</tspan> <tspan class="led" style="animation-delay:0.37s" fill="#3fb950">●</tspan> │</text>
 <text class="in" style="animation-delay:1.34s" x="28" y="346" fill="#6e7681">├────────────────────────────┤</text>
 <text class="in" style="animation-delay:1.38s" x="28" y="366" fill="#6e7681">│ &gt;_ thibaut@nexpublica      │</text>
 <text class="in" style="animation-delay:1.42s" x="28" y="386" fill="#6e7681">└────────────────────────────┘</text>
 <text class="in" style="animation-delay:1.46s" x="28" y="406" fill="#6e7681">   ╨                      ╨</text>
-<text class="in" style="animation-delay:1.00s" x="316.9" y="126"><tspan fill="#3fb950" font-weight="700">thibaut</tspan><tspan fill="#e6edf3">@</tspan><tspan fill="#3fb950" font-weight="700">nexpublica</tspan></text>
-<text class="in" style="animation-delay:1.06s" x="316.9" y="146"><tspan fill="#30363d">──────────────────────────────────────────────────────────</tspan></text>
-<text class="in" style="animation-delay:1.12s" x="316.9" y="166"><tspan fill="#8b949e">OS</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> ...................... </tspan><tspan fill="#e6edf3">Arch Linux · Omarchy · Hyprland</tspan></text>
-<text class="in" style="animation-delay:1.18s" x="316.9" y="186"><tspan fill="#8b949e">Host</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> ....................... </tspan><tspan fill="#e6edf3">Nexpublica · Montpellier, FR</tspan></text>
-<text class="in" style="animation-delay:1.24s" x="316.9" y="206"><tspan fill="#8b949e">Kernel</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> ................... </tspan><tspan fill="#e6edf3">Systems &amp; Integration Engineer</tspan></text>
-<text class="in" style="animation-delay:1.30s" x="316.9" y="226"><tspan fill="#8b949e">Uptime</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> ........................ </tspan><tspan fill="#e6edf3">5 years, 9 months, 8 days</tspan></text>
-<text class="in" style="animation-delay:1.36s" x="316.9" y="246"><tspan fill="#8b949e">Shell</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> ................................. </tspan><tspan fill="#e6edf3">bash · PowerShell</tspan></text>
-<text class="in" style="animation-delay:1.48s" x="316.9" y="286"><tspan fill="#8b949e">Virt</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> .................... </tspan><tspan fill="#e6edf3">Proxmox · VMware ESXi · Hyper-V</tspan></text>
-<text class="in" style="animation-delay:1.54s" x="316.9" y="306"><tspan fill="#8b949e">Containers</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> .............. </tspan><tspan fill="#e6edf3">Docker · Kubernetes · OpenShift</tspan></text>
-<text class="in" style="animation-delay:1.60s" x="316.9" y="326"><tspan fill="#8b949e">IaC</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> ....................... </tspan><tspan fill="#e6edf3">Ansible · Terraform · Vagrant</tspan></text>
-<text class="in" style="animation-delay:1.66s" x="316.9" y="346"><tspan fill="#8b949e">Langs</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> .................... </tspan><tspan fill="#e6edf3">Python · Go · Rust · Bash · TS</tspan></text>
-<text class="in" style="animation-delay:1.72s" x="316.9" y="366"><tspan fill="#8b949e">Monitoring</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> ................ </tspan><tspan fill="#e6edf3">Grafana · Prometheus · Zabbix</tspan></text>
-<text class="in" style="animation-delay:1.78s" x="316.9" y="386"><tspan fill="#8b949e">Motto</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> ...................... </tspan><tspan fill="#e6edf3">automate everything possible</tspan></text>
-<text class="in" style="animation-delay:1.90s" x="316.9" y="426"><tspan fill="#e6edf3" font-weight="700">─ GitHub </tspan><tspan fill="#30363d">─────────────────────────────────────────────────</tspan></text>
-<text class="in" style="animation-delay:1.96s" x="316.9" y="446"><tspan fill="#8b949e">Repos</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> ................. </tspan><tspan fill="#e6edf3">29</tspan><tspan fill="#30363d"> │ </tspan><tspan fill="#8b949e">Stars</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> ................... </tspan><tspan fill="#e6edf3">9</tspan></text>
-<text class="in" style="animation-delay:2.02s" x="316.9" y="466"><tspan fill="#8b949e">Commits</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> ............ </tspan><tspan fill="#e6edf3">1 545</tspan><tspan fill="#30363d"> │ </tspan><tspan fill="#8b949e">Followers</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> .............. </tspan><tspan fill="#e6edf3">50</tspan></text>
-<rect class="in" style="animation-delay:2.14s" x="316.9" y="493" width="25.3" height="17" fill="#2d333b"/>
-<rect class="in" style="animation-delay:2.14s" x="342.2" y="493" width="25.3" height="17" fill="#444c56"/>
-<rect class="in" style="animation-delay:2.14s" x="367.5" y="493" width="25.3" height="17" fill="#636e7b"/>
-<rect class="in" style="animation-delay:2.14s" x="392.8" y="493" width="25.3" height="17" fill="#768390"/>
-<rect class="in" style="animation-delay:2.14s" x="418.1" y="493" width="25.3" height="17" fill="#adbac7"/>
-<rect class="in" style="animation-delay:2.14s" x="443.3" y="493" width="25.3" height="17" fill="#cdd9e5"/>
-<rect class="in" style="animation-delay:2.14s" x="468.6" y="493" width="25.3" height="17" fill="#3fb950"/>
-<rect class="in" style="animation-delay:2.14s" x="493.9" y="493" width="25.3" height="17" fill="#f0f6fc"/>
+<text class="in" style="animation-delay:1.00s" x="317.1" y="126"><tspan fill="#3fb950" font-weight="700">thibaut</tspan><tspan fill="#e6edf3">@</tspan><tspan fill="#3fb950" font-weight="700">nexpublica</tspan></text>
+<text class="in" style="animation-delay:1.06s" x="317.1" y="146"><tspan fill="#30363d">──────────────────────────────────────────────────────────</tspan></text>
+<text class="in" style="animation-delay:1.12s" x="317.1" y="166"><tspan fill="#8b949e">OS</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> ...................... </tspan><tspan fill="#e6edf3">Arch Linux · Omarchy · Hyprland</tspan></text>
+<text class="in" style="animation-delay:1.18s" x="317.1" y="186"><tspan fill="#8b949e">Host</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> ....................... </tspan><tspan fill="#e6edf3">Nexpublica · Montpellier, FR</tspan></text>
+<text class="in" style="animation-delay:1.24s" x="317.1" y="206"><tspan fill="#8b949e">Kernel</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> ................... </tspan><tspan fill="#e6edf3">Systems &amp; Integration Engineer</tspan></text>
+<text class="in" style="animation-delay:1.30s" x="317.1" y="226"><tspan fill="#8b949e">Uptime</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> ........................ </tspan><tspan fill="#e6edf3">5 years, 9 months, 8 days</tspan></text>
+<text class="in" style="animation-delay:1.36s" x="317.1" y="246"><tspan fill="#8b949e">Shell</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> ................................. </tspan><tspan fill="#e6edf3">bash · PowerShell</tspan></text>
+<text class="in" style="animation-delay:1.48s" x="317.1" y="286"><tspan fill="#8b949e">Virt</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> .................... </tspan><tspan fill="#e6edf3">Proxmox · VMware ESXi · Hyper-V</tspan></text>
+<text class="in" style="animation-delay:1.54s" x="317.1" y="306"><tspan fill="#8b949e">Containers</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> .............. </tspan><tspan fill="#e6edf3">Docker · Kubernetes · OpenShift</tspan></text>
+<text class="in" style="animation-delay:1.60s" x="317.1" y="326"><tspan fill="#8b949e">IaC</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> ....................... </tspan><tspan fill="#e6edf3">Ansible · Terraform · Vagrant</tspan></text>
+<text class="in" style="animation-delay:1.66s" x="317.1" y="346"><tspan fill="#8b949e">Langs</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> .................... </tspan><tspan fill="#e6edf3">Python · Go · Rust · Bash · TS</tspan></text>
+<text class="in" style="animation-delay:1.72s" x="317.1" y="366"><tspan fill="#8b949e">Monitoring</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> ................ </tspan><tspan fill="#e6edf3">Grafana · Prometheus · Zabbix</tspan></text>
+<text class="in" style="animation-delay:1.78s" x="317.1" y="386"><tspan fill="#8b949e">Motto</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> ...................... </tspan><tspan fill="#e6edf3">automate everything possible</tspan></text>
+<text class="in" style="animation-delay:1.90s" x="317.1" y="426"><tspan fill="#e6edf3" font-weight="700">─ GitHub </tspan><tspan fill="#30363d">─────────────────────────────────────────────────</tspan></text>
+<text class="in" style="animation-delay:1.96s" x="317.1" y="446"><tspan fill="#8b949e">Repos</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> ................. </tspan><tspan fill="#e6edf3">29</tspan><tspan fill="#30363d"> │ </tspan><tspan fill="#8b949e">Stars</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> ................... </tspan><tspan fill="#e6edf3">9</tspan></text>
+<text class="in" style="animation-delay:2.02s" x="317.1" y="466"><tspan fill="#8b949e">Commits</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> ............ </tspan><tspan fill="#e6edf3">1 596</tspan><tspan fill="#30363d"> │ </tspan><tspan fill="#8b949e">Followers</tspan><tspan fill="#e6edf3">:</tspan><tspan fill="#30363d"> .............. </tspan><tspan fill="#e6edf3">50</tspan></text>
+<rect class="in" style="animation-delay:2.14s" x="317.1" y="493" width="25.3" height="17" fill="#2d333b"/>
+<rect class="in" style="animation-delay:2.14s" x="342.4" y="493" width="25.3" height="17" fill="#444c56"/>
+<rect class="in" style="animation-delay:2.14s" x="367.6" y="493" width="25.3" height="17" fill="#636e7b"/>
+<rect class="in" style="animation-delay:2.14s" x="392.9" y="493" width="25.3" height="17" fill="#768390"/>
+<rect class="in" style="animation-delay:2.14s" x="418.2" y="493" width="25.3" height="17" fill="#adbac7"/>
+<rect class="in" style="animation-delay:2.14s" x="443.5" y="493" width="25.3" height="17" fill="#cdd9e5"/>
+<rect class="in" style="animation-delay:2.14s" x="468.8" y="493" width="25.3" height="17" fill="#3fb950"/>
+<rect class="in" style="animation-delay:2.14s" x="494.1" y="493" width="25.3" height="17" fill="#f0f6fc"/>
 </svg>
