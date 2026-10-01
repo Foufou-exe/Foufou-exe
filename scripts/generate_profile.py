@@ -2,6 +2,7 @@
 """Generate the terminal-style profile panes (dark + light SVG).
 
   assets/card-*.svg      ~ ❯ fastfetch
+  assets/docker-*.svg    ~ ❯ docker ps
   assets/trophies-*.svg  ~ ❯ achievements --shelf
   assets/contrib-*.svg   ~ ❯ git log --3d   +   systemctl status profile.timer
 
@@ -9,9 +10,12 @@ Stdlib only. Uses GITHUB_TOKEN (GraphQL) when available, falls back to the
 public REST API otherwise.
 """
 import base64
+import hashlib
 import json
 import os
 import re
+import shutil
+import subprocess
 import urllib.error
 import urllib.request
 from datetime import datetime, timedelta, timezone
@@ -32,7 +36,7 @@ THEMES = {
                  shelf="#21262d", contrib="profile-night-green.svg"),
     "light": dict(bg="#ffffff", bar="#f6f8fa", border="#d1d9e0", text="#1f2328",
                   key="#59636e", dots="#d1d9e0", art="#818b98", accent="#1a7f37",
-                  shelf="#eaeef2", contrib="profile-green.svg"),
+                  shelf="#eaeef2", contrib="profile-green-animate.svg"),
 }
 
 # Server rack. `*` marks a blinking LED.
@@ -67,6 +71,11 @@ ACHIEVEMENTS = [
     ("open-sourcerer", "Open Sourcerer", "PRs in many repos"),
     ("arctic-code-vault-contributor", "Arctic Code Vault", "retired in 2020"),
 ]
+# primary language -> the image you'd actually `docker run`
+IMAGES = {"python": "python:3.12", "rust": "rust:1-slim", "go": "golang:1.23", "typescript": "node:lts",
+          "javascript": "node:lts", "vue": "node:lts", "dart": "dart:stable", "c++": "gcc:14", "c": "gcc:14",
+          "c#": "dotnet/sdk:8", "java": "temurin:21", "php": "php:8-fpm", "shell": "alpine:3",
+          "powershell": "pwsh:lts", "html": "nginx:alpine", "css": "nginx:alpine"}
 TIER_COLORS = {2: "#f9bfa7", 3: "#d3d3d3", 4: "#eac54f"}  # bronze, silver, gold
 
 FONT = 14
@@ -122,6 +131,62 @@ def stats():
     return s
 
 
+ICON_PX = 128  # 2x the displayed size, stays sharp on retina
+
+
+def shrink(png):
+    """Downscale a PNG to ICON_PX with Pillow or ImageMagick; keep it as is otherwise."""
+    try:
+        from io import BytesIO
+        from PIL import Image
+        im = Image.open(BytesIO(png))
+        im.thumbnail((ICON_PX, ICON_PX), Image.LANCZOS)
+        buf = BytesIO()
+        im.save(buf, "PNG", optimize=True)
+        return buf.getvalue()
+    except ImportError:
+        pass
+    magick = shutil.which("magick") or shutil.which("convert")
+    if magick:
+        r = subprocess.run([magick, "png:-", "-resize", f"{ICON_PX}x{ICON_PX}", "-strip", "png:-"],
+                           input=png, capture_output=True)
+        if r.returncode == 0 and r.stdout:
+            return r.stdout
+    return png
+
+
+def projects():
+    """Pinned repos (GraphQL, needs a token) or the most recently pushed ones."""
+    if TOKEN:
+        q = """query($login:String!){user(login:$login){pinnedItems(first:6,types:REPOSITORY){nodes{
+          ... on Repository{name description stargazerCount forkCount pushedAt isArchived
+          primaryLanguage{name}}}}}}"""
+        nodes = graphql(q, login=USER)["user"]["pinnedItems"]["nodes"]
+        if nodes:
+            return "pinned", [{"name": n["name"], "desc": n["description"] or "",
+                     "lang": (n["primaryLanguage"] or {}).get("name") or "scratch",
+                     "stars": n["stargazerCount"], "forks": n["forkCount"],
+                     "pushed": n["pushedAt"], "archived": n["isArchived"]} for n in nodes]
+    repos = fetch(f"https://api.github.com/users/{USER}/repos?per_page=100&type=owner&sort=pushed")
+    repos = [r for r in repos if not r["fork"] and r["name"] != USER][:6]
+    return "recently pushed", [{"name": r["name"], "desc": r["description"] or "", "lang": r["language"] or "scratch",
+             "stars": r["stargazers_count"], "forks": r["forks_count"],
+             "pushed": r["pushed_at"], "archived": r["archived"]} for r in repos]
+
+
+def ago(iso):
+    """Docker-style duration: '3 days', 'About an hour', '2 months'."""
+    secs = (NOW - datetime.fromisoformat(iso.replace("Z", "+00:00"))).total_seconds()
+    for unit, size in (("year", 31536000), ("month", 2592000), ("week", 604800),
+                       ("day", 86400), ("hour", 3600), ("minute", 60)):
+        n = int(secs // size)
+        if n >= 2:
+            return f"{n} {unit}s"
+        if n == 1:
+            return "About an hour" if unit == "hour" else f"1 {unit}"
+    return "Less than a second"
+
+
 def achievements():
     """Scrape unlocked achievements from the profile hovercards (no public API)."""
     cache = json.loads(ACH_CACHE.read_text()) if ACH_CACHE.exists() else {}
@@ -146,10 +211,11 @@ def achievements():
         img = max(imgs, key=lambda u: next((n for n, r in enumerate(rank) if f"-{r}-" in u), 0))
         tier = re.search(r">\s*x(\d)\s*<", html)
         date = re.search(r'datetime="([^"]+)"', html)
-        icon = cache.get(slug, {}).get("icon") if cache.get(slug, {}).get("img") == img else None
+        cached = cache.get(slug, {})
+        icon = cached.get("icon") if (cached.get("img"), cached.get("size")) == (img, ICON_PX) else None
         if not icon:
-            icon = base64.b64encode(fetch(img, accept="image/png", raw=True)).decode()
-        result[slug] = {"img": img, "icon": icon, "tier": int(tier.group(1)) if tier else 1,
+            icon = base64.b64encode(shrink(fetch(img, accept="image/png", raw=True))).decode()
+        result[slug] = {"img": img, "size": ICON_PX, "icon": icon, "tier": int(tier.group(1)) if tier else 1,
                         "since": date.group(1)[:10] if date else ""}
     ACH_CACHE.write_text(json.dumps(result, indent=1))
     return result
@@ -307,7 +373,49 @@ def render_card(s, t):
     return window("thibaut@nexpublica: ~", height, "\n".join(out), t)
 
 
-# ── pane 2: trophy shelf ──────────────────────────────────────────────────────
+# ── pane 2: docker ps ─────────────────────────────────────────────────────────
+
+def render_docker(projects, t):
+    source, repos = projects
+    fs, cw = 12, 7.23  # smaller font so the table fits like a real 100+ col terminal
+    cols = [("CONTAINER ID", 12), ("IMAGE", 13), ("COMMAND", 23), ("STATUS", 15), ("PORTS", 11), ("NAMES", 0)]
+    gap = 2
+    total = int((W - 2 * PAD) / cw)
+    used = sum(w for _, w in cols) + gap * (len(cols) - 1)
+    cols[-1] = ("NAMES", total - used)
+
+    def cell(text, width):
+        text = text if len(text) <= width else text[: width - 1] + "…"
+        return escape(text.ljust(width + gap))
+
+    y0 = BAR + PAD + LINE
+    out = [prompt(PAD, y0, "docker ps", t, .2, last=True)]
+    y = y0 + 2 * LINE
+    head = "".join(cell(n, w) for n, w in cols)
+    out.append(f'<text class="in" {d(.9)} x="{PAD}" y="{y}" font-size="{fs}" fill="{t["key"]}">{head}</text>')
+    for i, r in enumerate(repos):
+        y += LINE + 4
+        cid = hashlib.sha1(r["name"].encode()).hexdigest()[:12]
+        image = IMAGES.get(r["lang"].lower(), f'{r["lang"].lower().replace(" ", "-")}:latest')
+        cmd = f'"{r["desc"].strip() or r["name"]}"'
+        status = f'Exited (0) {ago(r["pushed"])} ago' if r["archived"] else f'Up {ago(r["pushed"])}'
+        ports = f'{r["stars"]}★->{r["forks"]}/fork'
+        parts = [(cid, t["art"]), (image, t["text"]), (cmd, t["key"]),
+                 (status, t["key"] if r["archived"] else t["accent"]), (ports, t["text"]), (r["name"], t["text"])]
+        line = "".join(f'<tspan fill="{c}"{" font-weight=\"700\"" if k == 5 else ""}>{cell(v, cols[k][1])}</tspan>'
+                       for k, (v, c) in enumerate(parts))
+        out.append(f'<text class="in" {d(1.0 + i * .12)} x="{PAD}" y="{y}" font-size="{fs}">{line}</text>')
+
+    up = sum(not r["archived"] for r in repos)
+    y += 2 * LINE
+    out.append(f'<text class="in" {d(1.2 + len(repos) * .12)} x="{PAD}" y="{y}" font-size="{fs}">'
+               f'<tspan fill="{t["accent"]}">●</tspan><tspan fill="{t["key"]}"> {up} running · '
+               f'{len(repos) - up} exited · built from {source} repositories</tspan></text>')
+    height = round(y + PAD + 4)
+    return window("thibaut@nexpublica: ~/projects", height, "\n".join(out), t)
+
+
+# ── pane 3: trophy shelf ──────────────────────────────────────────────────────
 
 def render_trophies(ach, t):
     cols, icon = 5, 64
@@ -378,11 +486,32 @@ def render_trophies(ach, t):
     return window("thibaut@nexpublica: ~/achievements", height, "\n".join(out), t)
 
 
-# ── pane 3: 3D contributions + the workflow as a systemd timer ────────────────
+# ── pane 4: 3D contributions + the workflow as a systemd timer ────────────────
 
 def next_run():
     run = NOW.replace(hour=5, minute=0, second=0, microsecond=0)
     return run if run > NOW else run + timedelta(days=1)
+
+
+def loop_3d(svg, period=7.0, wave=2.4):
+    """The 3D graph grows once (SMIL, 3s). Make it loop like a gif: grow, hold, sink,
+    with a phase offset per column so a wave sweeps across the calendar."""
+    x = 0.0
+
+    def sub(m):
+        nonlocal x
+        if m.group("x"):
+            x = float(m.group("x"))
+            return m.group(0)
+        a, b = m.group("a"), m.group("b")
+        tag = m.group("tag")
+        return (f'<{tag} attributeName="{m.group("attr")}"{m.group("type") or ""} values="{a};{b};{b};{a}" '
+                f'keyTimes="0;.3;.75;1" calcMode="spline" keySplines=".4 0 .2 1;0 0 1 1;.4 0 .2 1" '
+                f'dur="{period}s" begin="{-wave * (1 - x / 1280):.2f}s" repeatCount="indefinite"{m.group("end")}')
+
+    return re.sub(r'<g transform="translate\((?P<x>-?[\d.]+)[ ,]'
+                  r'|<(?P<tag>animate(?:Transform)?) attributeName="(?P<attr>[^"]+)"(?P<type> type="[^"]+")?'
+                  r' values="(?P<a>[^";]+);(?P<b>[^"]+)" dur="3s" repeatCount="1"(?P<end>\s*/?>)', sub, svg)
 
 
 def render_contrib(s, ach, t):
@@ -393,7 +522,7 @@ def render_contrib(s, ach, t):
     if graph.exists():
         gw = W - 2 * PAD
         gh = gw * 850 / 1280
-        b64 = base64.b64encode(graph.read_bytes()).decode()
+        b64 = base64.b64encode(loop_3d(graph.read_text()).encode()).decode()
         out.append(f'<clipPath id="g"><rect x="{PAD}" y="{y}" width="{gw}" height="{gh:.0f}" rx="8"/></clipPath>'
                    f'<g class="in" {d(1.4)}><image clip-path="url(#g)" x="{PAD}" y="{y}" width="{gw}" height="{gh:.0f}" '
                    f'href="data:image/svg+xml;base64,{b64}"/>'
@@ -429,7 +558,7 @@ def render_contrib(s, ach, t):
         f"fetched {s['repos']} repos · {fmt(s['commits'])} commits · {s['followers']} followers",
         f"unlocked {len(ach)}/{len(ACHIEVEMENTS)} achievements",
         "rendered 3D contribution graph",
-        "rendered fastfetch · shelf · timer panes",
+        "rendered fastfetch · docker · shelf · timer panes",
         "Finished profile.service.",
     ]
     for j, msg in enumerate(journal):
@@ -447,9 +576,11 @@ def render_contrib(s, ach, t):
 def main():
     s = stats()
     ach = achievements()
+    repos = projects()
     OUT.mkdir(exist_ok=True)
     for name, theme in THEMES.items():
         (OUT / f"card-{name}.svg").write_text(render_card(s, theme), encoding="utf-8")
+        (OUT / f"docker-{name}.svg").write_text(render_docker(repos, theme), encoding="utf-8")
         (OUT / f"trophies-{name}.svg").write_text(render_trophies(ach, theme), encoding="utf-8")
         (OUT / f"contrib-{name}.svg").write_text(render_contrib(s, ach, theme), encoding="utf-8")
     print(f"ok: {s['repos']} repos, {s['stars']} stars, {s['commits']} commits, "

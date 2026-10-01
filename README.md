@@ -8,6 +8,15 @@
 
 <br><br>
 
+<a href="https://github.com/Foufou-exe?tab=repositories">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/docker-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/docker-light.svg" />
+  <img src="./assets/docker-dark.svg" alt="~ ❯ docker ps — my projects" width="100%" />
+</picture>
+</a>
+<br><br>
+
 <a href="https://github.com/Foufou-exe?tab=achievements">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/trophies-dark.svg" />
