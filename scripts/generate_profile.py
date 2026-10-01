@@ -583,6 +583,12 @@ def main():
         (OUT / f"docker-{name}.svg").write_text(render_docker(repos, theme), encoding="utf-8")
         (OUT / f"trophies-{name}.svg").write_text(render_trophies(ach, theme), encoding="utf-8")
         (OUT / f"contrib-{name}.svg").write_text(render_contrib(s, ach, theme), encoding="utf-8")
+    # summary read by check_profile.py (no secrets, no timestamps → no daily churn)
+    (OUT / "stats.json").write_text(json.dumps({
+        "repos": s["repos"], "stars": s["stars"], "commits": s["commits"], "followers": s["followers"],
+        "achievements": sorted(ach), "projects": [r["name"] for r in repos[1]],
+        "graph_3d": all((CONTRIB / t["contrib"]).exists() for t in THEMES.values()),
+    }, indent=1) + "\n")
     print(f"ok: {s['repos']} repos, {s['stars']} stars, {s['commits']} commits, "
           f"{s['followers']} followers, achievements: {', '.join(f'{k} x{v['tier']}' for k, v in ach.items())}")
 

@@ -7,7 +7,9 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: [scripts/generate_profile.py, .github/workflows/profile.yml]
+    paths:
+      - scripts/**
+      - .github/workflows/profile.yml
 
 permissions:
   contents: write
@@ -19,24 +21,30 @@ concurrency:
 jobs:
   profile:
     name: profile.service
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       - name: Render 3D contribution graph
-        uses: yoshi389111/github-profile-3d-contrib@latest
+        uses: yoshi389111/github-profile-3d-contrib@v0.9.3
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
-      - name: Render fastfetch · shelf · timer panes
+      - name: Render fastfetch · docker · shelf · timer panes
         run: python scripts/generate_profile.py
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+
+      # Anything off (bad SVG, empty shelf, API hiccup) fails here:
+      # nothing gets committed and yesterday's profile stays online.
+      - name: Check panes before publishing
+        run: python scripts/check_profile.py
 
       - name: Catch up with main
         run: |
@@ -45,7 +53,7 @@ jobs:
           git pull --rebase --autostash origin main
 
       - name: Commit & Push
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "chore: profile.timer refresh"
           file_pattern: "assets/* profile-3d-contrib/*"
